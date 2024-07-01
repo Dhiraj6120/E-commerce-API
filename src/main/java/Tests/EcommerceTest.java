@@ -2,7 +2,7 @@ package Tests;
 
 import Basic.Builder;
 import POJO.*;
-import io.restassured.http.ContentType;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
@@ -16,22 +16,26 @@ public class EcommerceTest {
 
     LoginResponse loginResponse;
     CreateProductResponse createProductResponse;
+    CreateOrderResponse createOrderResponse;
+    String token= null;
     @Test
     public void getLogInToken(){
 
         //Login to application and Generate the token
         RequestSpecification req1 = new Builder().requestSpecification();
         LoginRequest lR = new LoginRequest();
-        lR.setUserEmail("dhiraj45@yopmail.com");
+        lR.setUserEmail("asd1209@yopmail.com");
         lR.setUserPassword("Dhiali@7936");
         RequestSpecification reqLogIn = given().spec(req1).body(lR);
         loginResponse = reqLogIn.when().post("/auth/login")
                 .then().log().all().assertThat().statusCode(200).extract().response().as(LoginResponse.class);
 
+        token = loginResponse.getToken();
+
         //Create a product
-        RequestSpecification req2 = new Builder().requestSpecification(loginResponse.getToken());
+        RequestSpecification req2 = new Builder().requestSpecification(token);
         RequestSpecification createProductRes = given().spec(req2)
-                .param("productName", "Macbook 16 pro")
+                .param("productName", "Sonoma 1121 pro")
                 .param("productAddedBy", loginResponse.getUserId())
                 .param("productCategory", "Electronic")
                 .param("productSubCategory", "Computers")
@@ -45,7 +49,7 @@ public class EcommerceTest {
 
         //Creating the order with created product (Placing the order)
 
-        RequestSpecification req3 = new Builder().requestSpecification(loginResponse.getToken(), "JSON");
+        RequestSpecification req3 = new Builder().requestSpecification(token, "JSON");
         CreateOrderRequest COR = new CreateOrderRequest();
 
         OrderDetails OD = new OrderDetails();
@@ -56,8 +60,13 @@ public class EcommerceTest {
         COR.setOrders(orders);
 
         RequestSpecification createOrderRes = given().spec(req3).body(COR);
-        createOrderRes.when().post("/order/create-order")
-                .then().log().all().assertThat().statusCode(201);
+        createOrderResponse = createOrderRes.when().post("/order/create-order")
+                .then().log().all().assertThat().statusCode(201).extract().response().as(CreateOrderResponse.class);
 
+        RequestSpecification deleteRequestSpecification = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/api/ecom")
+                .addHeader("authorization", token).build();
+
+        given().spec(deleteRequestSpecification).pathParam("productId", createProductResponse.getProductId())
+                .when().delete("/product/delete-product/{productId}").then().log().all().assertThat().statusCode(200);
     }
 }
