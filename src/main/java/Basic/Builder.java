@@ -14,6 +14,7 @@ public class Builder {
     public RequestSpecification requestSpecification(String token){
         return new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/api/ecom")
                 .addHeader("authorization", token).build();
+
     }
 
     public RequestSpecification requestSpecification(String token, @NotNull String JSON){
