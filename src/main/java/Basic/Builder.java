@@ -16,7 +16,14 @@ public class Builder {
     }
 
     public RequestSpecification requestSpecification(String token, String JSON){
+        if(JSON.equalsIgnoreCase("jSON")){
         return new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/api/ecom")
                 .addHeader("authorization", token).setContentType(ContentType.JSON).build();
+        }
+        else {
+            return new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/api/ecom")
+                    .addHeader("authorization", token).addQueryParam("id", JSON).build();
+        }
+
     }
 }
