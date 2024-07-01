@@ -1,6 +1,8 @@
 package Tests;
 
 import Basic.Builder;
+import POJO.CreateOrderRequest;
+import POJO.CreateProductResponse;
 import POJO.LoginRequest;
 import POJO.LoginResponse;
 import io.restassured.specification.RequestSpecification;
@@ -13,6 +15,7 @@ import static io.restassured.RestAssured.given;
 public class EcommerceTest {
 
     LoginResponse loginResponse;
+    CreateProductResponse createProductResponse;
     @Test
     public void getLogInToken(){
 
@@ -37,8 +40,14 @@ public class EcommerceTest {
                 .param("productFor", "Everyone")
                 .multiPart("productImage", new File("/Users/dhiraj/Documents/Study/End to End ecommerce API/src/main/resources/img.png"));
 
-        createProductRes.when().post("/product/add-product").
-                then().log().all().assertThat().statusCode(201);
+        createProductResponse = createProductRes.when().post("/product/add-product").
+                then().log().all().assertThat().statusCode(201).extract().as(CreateProductResponse.class);
+
+        //Creating the order with created product (Placing the order)
+        CreateOrderRequest COR = new CreateOrderRequest();
+        COR.setCountry("India");
+        COR.setProductOrderedId(createProductResponse.getProductId());
+
 
     }
 }
