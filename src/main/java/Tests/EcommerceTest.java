@@ -48,6 +48,11 @@ public class EcommerceTest {
         COR.setCountry("India");
         COR.setProductOrderedId(createProductResponse.getProductId());
 
+        System.out.println(COR.getProductOrderedId());
+
+        RequestSpecification createOrderRes = given().spec(req2).body(COR);
+        createOrderRes.when().post("/order/create-order")
+                .then().log().all().assertThat().statusCode(201);
 
     }
 }
