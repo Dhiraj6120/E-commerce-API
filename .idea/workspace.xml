@@ -4,58 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22c7f0af-7888-4f46-afd7-b919c906a86b" name="Changes" comment="Login Test case">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tests/EcommerceTest.java" afterDir="false" />
+    <list default="true" id="fb032857-a6eb-4a94-8fb9-738529ac543c" name="Changes" comment="code for creating the product">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/EcommerceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/EcommerceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Local-Branch-Mac" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="Local-Branch-Mac2" />
+                    <option name="lastUsedInstant" value="1719806426" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="Local-Branch-Mac" />
+                    <option name="lastUsedInstant" value="1719806425" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
     </option>
   </component>
-  <component name="ProjectId" id="2iXjbSvdj7TwWhOyX64VuHrhsPM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.48735633"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="EcommerceTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.EcommerceTest.getLogInToken (1)">
+    <configuration name="EcommerceTest.getLogInToken (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="End_to_End_ecommerce_API" />
       <extension name="coverage">
         <pattern>
@@ -65,7 +65,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.EcommerceTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="getLogInToken" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EcommerceTest.getLogInToken" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="End_to_End_ecommerce_API" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.EcommerceTest" />
+      <option name="METHOD_NAME" value="getLogInToken" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -74,27 +93,34 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.EcommerceTest" />
+        <item itemvalue="TestNG.EcommerceTest.getLogInToken (1)" />
+        <item itemvalue="TestNG.EcommerceTest.getLogInToken" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="22c7f0af-7888-4f46-afd7-b919c906a86b" name="Changes" comment="" />
-      <created>1719643887058</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1719643887058</updated>
-    </task>
-    <task id="LOCAL-00001" summary="New End to End ecommerce API Automation Project">
-      <created>1719643952720</created>
+    <task id="LOCAL-00001" summary="Added code for generating the Auth Token">
+      <created>1719806230332</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1719643952720</updated>
+      <updated>1719806230332</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added code for creating the product">
+      <created>1719806310332</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719806310332</updated>
+    </task>
+    <task id="LOCAL-00003" summary="code for creating the product">
+      <created>1719806392436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719806392436</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,7 +135,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New End to End ecommerce API Automation Project" />
-    <option name="LAST_COMMIT_MESSAGE" value="New End to End ecommerce API Automation Project" />
+    <MESSAGE value="Added code for generating the Auth Token" />
+    <MESSAGE value="Added code for creating the product" />
+    <MESSAGE value="code for creating the product" />
+    <option name="LAST_COMMIT_MESSAGE" value="code for creating the product" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/End_to_End_ecommerce_API$EcommerceTest_getLogInToken__1_.ic" NAME="EcommerceTest.getLogInToken (1) Coverage Results" MODIFIED="1719805556132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Tests.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -25,5 +25,20 @@ public class EcommerceTest {
         loginResponse = reqLogIn.when().post("/auth/login")
                 .then().log().all().assertThat().statusCode(200).extract().response().as(LoginResponse.class);
 
+        //Create a product
+        RequestSpecification req2 = new Builder().requestSpecification(loginResponse.getToken());
+        RequestSpecification createProductRes = given().spec(req2)
+                .param("productName", "Macbook 16 pro")
+                .param("productAddedBy", loginResponse.getUserId())
+                .param("productCategory", "Electronic")
+                .param("productSubCategory", "Computers")
+                .param("productPrice", "120121")
+                .param("productDescription", "Macbook Apple product")
+                .param("productFor", "Everyone")
+                .multiPart("productImage", new File("/Users/dhiraj/Documents/Study/End to End ecommerce API/src/main/resources/img.png"));
+
+        createProductRes.when().post("/product/add-product").
+                then().log().all().assertThat().statusCode(201);
+
     }
 }
