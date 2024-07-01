@@ -14,4 +14,9 @@ public class Builder {
         return new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/api/ecom")
                 .addHeader("authorization", token).build();
     }
+
+    public RequestSpecification requestSpecification(String token, String JSON){
+        return new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/api/ecom")
+                .addHeader("authorization", token).setContentType(ContentType.JSON).build();
+    }
 }

@@ -1,14 +1,14 @@
 package Tests;
 
 import Basic.Builder;
-import POJO.CreateOrderRequest;
-import POJO.CreateProductResponse;
-import POJO.LoginRequest;
-import POJO.LoginResponse;
+import POJO.*;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -44,13 +44,18 @@ public class EcommerceTest {
                 then().log().all().assertThat().statusCode(201).extract().as(CreateProductResponse.class);
 
         //Creating the order with created product (Placing the order)
+
+        RequestSpecification req3 = new Builder().requestSpecification(loginResponse.getToken(), "JSON");
         CreateOrderRequest COR = new CreateOrderRequest();
-        COR.setCountry("India");
-        COR.setProductOrderedId(createProductResponse.getProductId());
 
-        System.out.println(COR.getProductOrderedId());
+        OrderDetails OD = new OrderDetails();
+        List<OrderDetails> orders = new ArrayList<>();
+        OD.setCountry("India");
+        OD.setProductOrderedId(createProductResponse.getProductId());
+        orders.add(OD);
+        COR.setOrders(orders);
 
-        RequestSpecification createOrderRes = given().spec(req2).body(COR);
+        RequestSpecification createOrderRes = given().spec(req3).body(COR);
         createOrderRes.when().post("/order/create-order")
                 .then().log().all().assertThat().statusCode(201);
 
