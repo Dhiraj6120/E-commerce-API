@@ -3,6 +3,7 @@ package Basic;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import org.jetbrains.annotations.NotNull;
 
 public class Builder {
     public RequestSpecification requestSpecification() {
@@ -15,7 +16,7 @@ public class Builder {
                 .addHeader("authorization", token).build();
     }
 
-    public RequestSpecification requestSpecification(String token, String JSON){
+    public RequestSpecification requestSpecification(String token, @NotNull String JSON){
         if(JSON.equalsIgnoreCase("jSON")){
         return new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/api/ecom")
                 .addHeader("authorization", token).setContentType(ContentType.JSON).build();
